@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import Navigation from "./partials/Navigation.vue";
+</script>
 
 <template>
     <Navigation />

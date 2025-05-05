@@ -1,4 +1,13 @@
-<script setup></script>
+<script setup>
+import NavLink from "./nav-link.vue";
+import { useAttrs } from "@vue/runtime-core";
+import { ref } from "vue";
+
+const isActive = ref(true);
+const hasError = ref(false);
+const text = ref("text-blue-500");
+const button = ref("border border-gray-300 text-white");
+</script>
 
 <template>
     <div class="min-h-full">
@@ -14,10 +23,13 @@
                             />
                         </div>
                         <div class="hidden md:block">
-                            <div
-                                class="ml-10 flex items-baseline space-x-4"
-                            ></div>
+                            <div class="ml-10 flex items-baseline space-x-4">
+                                <a :class="text" href="/">Test</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="h-8 w-8 border border-indigo-400"></div>
                     </div>
                 </div>
             </div>
