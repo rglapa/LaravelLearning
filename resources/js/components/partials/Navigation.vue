@@ -29,7 +29,11 @@ const button = ref("border border-gray-300 text-white");
                         </div>
                     </div>
                     <div class="hidden md:block">
-                        <div class="h-8 w-8 border border-indigo-400"></div>
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <NavLink :active="{request()->is('/')" href="/"
+                                >Moobo
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             </div>

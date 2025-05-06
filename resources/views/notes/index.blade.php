@@ -3,26 +3,30 @@
 
     <div class="space-y">
         <div class="mt-6 flex justify-end">
-            <button
-                type="button"
+            <x-link
+                href="/notes/create"
                 class="rounded-md border border-indigo-500 p-2"
             >
-                <a href="/notes/create">Create Note</a>
-            </button>
+                Create Note
+            </x-link>
         </div>
         @foreach ($notes as $note)
-            <a
-                href="/notes/{{ $note->id }}"
-                class="text-blue-500 hover:underline"
-            >
-                <div>
-                    {{ $note->body }}
-                </div>
-            </a>
+            @if (\Auth::user())
+                <a
+                    href="/notes/{{ $note->id }}"
+                    class="text-blue-500 hover:underline"
+                >
+                    <div>
+                        {{ $note->body }}
+                    </div>
+                </a>
+            @endif
         @endforeach
 
-        <div>
-            {{ $notes->links() }}
-        </div>
+        @if (Auth::user())
+            <div>
+                {{ $notes->links() }}
+            </div>
+        @endif
     </div>
 </x-layout>

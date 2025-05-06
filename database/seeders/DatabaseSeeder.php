@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
             'password' => 'password'
         ]);
-
+        $this->call(NoteSeeder::class);
         //$this->call(JobSeeder::class);
     }
 }

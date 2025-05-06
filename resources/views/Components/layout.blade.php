@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="hidden md:block">
-                            <div class="ml-4 flex items-center md:ml-6">
+                            <div class="ml-4 flex md:ml-6">
                                 @guest
                                     <x-nav-link
                                         href="/login"

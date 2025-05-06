@@ -18,9 +18,11 @@ Route::get('/jobs/{job}', [JobController::class, 'show']);
 Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])
     ->middleware('auth')
     ->can('edit', 'job');
+
 Route::patch('/jobs/{job}', [JobController::class, 'update'])
     ->middleware('auth')
     ->can('update', 'job');
+
 Route::delete('/jobs/{job}', [JobController::class, 'destroy'])
     ->middleware('auth')
     ->can('delete', 'job');
@@ -33,12 +35,9 @@ Route::get('/notes/{note}', [NoteController::class, 'show']);
 Route::get('/notes/{note}/edit', [NoteController::class, 'edit'])
     ->middleware('auth')
     ->can('edit', 'note');
-Route::patch('/notes/{note}', [NoteController::class, 'update'])
-    ->middleware('auth')
-    ->can('update', 'note');
-Route::delete('/notes/{note}', [NoteController::class, 'destroy'])
-    ->middleware('auth')
-    ->can('delete', 'note');
+Route::patch('/notes/{note}', [NoteController::class, 'update']);
+
+Route::delete('/notes/{note}', [NoteController::class, 'destroy']);
 
 Route::get('/contact', function () {
     return view('contact');
